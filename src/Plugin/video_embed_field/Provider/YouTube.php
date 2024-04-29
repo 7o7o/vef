@@ -26,12 +26,14 @@ class YouTube extends ProviderPluginBase {
         'autoplay' => $autoplay,
         'start' => $this->getTimeIndex(),
         'rel' => '0',
+        'enablejsapi' => '1',
       ],
       '#attributes' => [
         'width' => $width,
         'height' => $height,
         'frameborder' => '0',
         'allowfullscreen' => 'allowfullscreen',
+        'id' => sprintf('youtube-%s', $this->getVideoId()),
       ],
     ];
     if ($language = $this->getLanguagePreference()) {

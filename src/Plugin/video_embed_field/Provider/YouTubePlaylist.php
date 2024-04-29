@@ -25,12 +25,14 @@ class YouTubePlaylist extends ProviderPluginBase {
       '#query' => [
         'list' => $this->getVideoId(),
         'index' => $this->getVideoPositionIndex(),
+        'enablejsapi' => '1',
       ],
       '#attributes' => [
         'width' => $width,
         'height' => $height,
         'frameborder' => '0',
         'allowfullscreen' => 'allowfullscreen',
+        'id' => sprintf('youtube-%s', $this->getVideoId()),
       ],
     ];
   }
